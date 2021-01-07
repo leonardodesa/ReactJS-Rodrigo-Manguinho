@@ -1,2 +1,5 @@
 node_modules
 .vscode
+/coverage.data
+/coverage/
+/coverage/Icov-report
