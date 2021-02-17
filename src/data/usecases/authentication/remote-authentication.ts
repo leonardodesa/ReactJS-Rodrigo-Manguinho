@@ -1,16 +1,17 @@
-import { AuthenticationParams } from 'domain/usecases/authentication'
-import { HttpPostClient } from '../../protocols/http/http-post-client'
+/* eslint-disable no-useless-constructor */
+import { AuthenticationParams } from 'domain/usecases/authentication';
+import { HttpPostClient } from '../../protocols/http/http-post-client';
 
 export class RemoteAuthentication {
-  constructor (
+  constructor(
     private readonly url: string,
-    private readonly httpPostClient: HttpPostClient
+    private readonly httpPostClient: HttpPostClient,
   ) {}
 
-  async auth (params: AuthenticationParams): Promise<void> {
+  async auth(params: AuthenticationParams): Promise<void> {
     await this.httpPostClient.post({
-      url: this.url, 
+      url: this.url,
       body: params,
-    })
+    });
   }
 }
